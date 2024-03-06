@@ -17,12 +17,24 @@ def setup_game():
     player = Player(starting_room)
     return player
 
+
 def process_command(command, current_state, player):
     if current_state == GameState.EXPLORING:
+        # Handles both "go" and "go to" commands
         if command[0] == "go" and len(command) > 1:
-            direction = command[1]
-            if direction in player.current_location.connected_rooms:
-                player.move_to(player.current_location.connected_rooms[direction])
+            # Supports both "go [direction]" and "go to [destination]" commands
+            destination = command[2] if len(command) >= 3 and command[1] == "to" else command[1]
+            #print(f"Attempting to go to: {destination}")  # Debug print
+            #print(f"Available connections: {player.current_location.connected_rooms}")  # Debug print
+
+            # Normalize the destination to lowercase for comparison
+            destination = destination.lower()
+
+            # Check if the specified destination/direction is a valid connected room
+            if destination in player.current_location.connected_rooms:
+                # Move the player to the new location
+                new_room_key = player.current_location.connected_rooms[destination]
+                player.move_to(new_room_key)
             else:
                 print("You can't go that way.")
                 wait_for_key_press()

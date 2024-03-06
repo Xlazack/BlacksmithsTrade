@@ -1,6 +1,16 @@
 {
     "Book": {
       "description": "An old, dusty book about Python."
-    }
+    },
+      "Apple": {
+        "description": "An apple, freshly picked from a tree.",
+        "image": [
+          "  ,--./,-.",
+          " / #      \\",
+          "|          |",
+          " \\        /",
+          "  `._,._,'"
+        ]
+      }
   }
   

@@ -4,6 +4,10 @@ class Player:
     def __init__(self, start_location):
         self.current_location = start_location
         self.inventory = []
+        self.abilities = {"observation": True}#False}  # Start with all abilities not present
+
+    def has_ability(self, ability_name):
+        return self.abilities.get(ability_name, False)
 
     def pick_up_item(self, item):
         self.inventory.append(item)

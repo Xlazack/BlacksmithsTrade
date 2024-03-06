@@ -35,6 +35,9 @@ def process_command(command, current_state, player):
             else:
                 print("You don't see that item here.")
                 wait_for_key_press()
+        elif (command[0] == "look" and len(command) > 1 and command[1] == "around") or (command[0] == "la"):
+            player.current_location.look_around()
+            wait_for_key_press()
         else:
             print("Invalid command.")
             wait_for_key_press()
@@ -57,7 +60,7 @@ def main():
     while True:
         # Move clear_screen() to later in the loop
         if current_state == GameState.EXPLORING:
-            player.current_location.describe()
+            player.current_location.describe(player)
         elif current_state == GameState.INVENTORY:
             player.show_inventory()
 
@@ -71,9 +74,9 @@ def main():
         elif command[0] == "help":
             show_help(current_state)
             input("Press Enter to continue...")  # Let player read the help output
-        elif command[0] == "inventory":
+        elif command[0] in ["inventory", "inv"]:
             current_state = GameState.INVENTORY
-        elif command[0] == "back":
+        elif command[0] in ["back", "b"]:
             current_state = GameState.EXPLORING
         else:
             process_command(command, current_state, player)

@@ -4,6 +4,7 @@ from utils.functions import clear_screen
 
 commands = {
     GameState.EXPLORING: {
+        "look around": "Look around to see possible directions and items. Requires observation ability.",
         "go [direction]": "Moves the player in the specified direction.",
         "pick up [item]": "Picks up an item from the current room.",
         "inventory": "Opens your inventory.",

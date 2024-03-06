@@ -1,12 +1,24 @@
 {
-    "Living Room": {
-      "description": "A cozy living room with a fireplace.",
-      "north": "Kitchen",
-      "items": ["Book"]
+    "Bedroom":{
+      "description": "A room with your own bed",
+      "east": "Kitchen",
+      "items": []
     },
     "Kitchen": {
       "description": "A kitchen with a smell of fresh bread.",
       "south": "Living Room",
+      "west": "Bedroom",
+      "items": ["Apple"]
+    },
+    "Living Room": {
+      "description": "A cozy living room with a fireplace.",
+      "north": "Kitchen",
+      "west": "Forge",
+      "items": ["Book"]
+    },
+    "Forge": {
+      "description": "Forge at your disposal, brimming with energy to create masterpieces",
+      "east": "Living Room",
       "items": []
     }
   }

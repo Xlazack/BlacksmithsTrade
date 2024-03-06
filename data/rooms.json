@@ -1,0 +1,13 @@
+{
+    "Living Room": {
+      "description": "A cozy living room with a fireplace.",
+      "north": "Kitchen",
+      "items": ["Book"]
+    },
+    "Kitchen": {
+      "description": "A kitchen with a smell of fresh bread.",
+      "south": "Living Room",
+      "items": []
+    }
+  }
+  

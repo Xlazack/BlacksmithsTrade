@@ -1,3 +1,5 @@
-class GameState:
-    EXPLORING = 1
-    INVENTORY = 2
+from enum import Enum, auto
+
+class GameState(Enum):
+    EXPLORING = auto()
+    INVENTORY = auto()

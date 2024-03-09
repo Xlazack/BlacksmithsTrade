@@ -17,7 +17,7 @@
   "4140 Steel Hammer": {
     "type": "tool",
     "description": "A high-quality hammer made from 4140 steel, increases crafting efficiency.",
-    "stackable": false
+    "stackable": true
   },
   "Emerald": {
     "type": "monetary",

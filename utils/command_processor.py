@@ -20,9 +20,20 @@ def process_command(command, current_state, player, time_system):
         elif command[0] == "pick" and len(command) > 2 and command[1] == "up":
             item_name = " ".join(command[2:])
             item = player.current_location.get_item_by_name(item_name)
+            print({item_name})
+            print({item})
             if item:
-                player.pick_up_item(item)
-                player.current_location.remove_item(item)
+                # Determine if the item is stackable or unique for removal and pickup process
+                if item.stackable:
+                    print("stackable")
+                    quantity = 1  # or determine quantity based on the command or context
+                    player.current_location.items.remove_item(item_name, quantity)  # Adjust remove_item to accept quantity
+                    player.pick_up_item(item, quantity)
+                else:
+                    player.current_location.items.remove_item(item_name)  # Unique items handled by name/ID
+                    player.pick_up_item(item)
+                print(f"You picked up {item.name}.")
+                wait_for_key_press()
             else:
                 print("You don't see that item here.")
                 wait_for_key_press()

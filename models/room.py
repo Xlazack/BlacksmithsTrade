@@ -35,10 +35,20 @@ class Room:
         # This method should be implemented based on the game logic for actions
         pass
 
-    def get_item_by_name(self, name):
-        # Adjusted to work with the Inventory class
-        return self.items.get_item(name)
+    def get_item_by_name(self, item_name):
+        # Normalize the names for case-insensitive comparison
+        normalized_name = item_name.lower()
+        # Check stackable items first
+        for name, info in self.items.stackable_items.items():
+            if name.lower() == normalized_name:
+                return info['item']
+        # Then check unique items by name
+        for item in self.items.unique_items.values():
+            if item.name.lower() == normalized_name:
+                return item
+        return None
 
+    
     def remove_item(self, item_name):
-        # Adjusted to work with the Inventory class
+        # This method should mirror Inventory's logic but for room items
         return self.items.remove_item(item_name)

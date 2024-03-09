@@ -1,16 +1,52 @@
 {
     "Book": {
-      "description": "An old, dusty book about Python."
+      "stackable": false,
+      "description": "An old, dusty book about Python.",
+      "type": "book"
     },
-      "Apple": {
-        "description": "An apple, freshly picked from a tree.",
-        "image": [
-          "  ,--./,-.",
-          " / #      \\",
-          "|          |",
-          " \\        /",
-          "  `._,._,'"
-        ]
+    "Apple": {
+      "stackable": true,
+      "description": "An apple, freshly picked from a tree. Restores a small amount of life.",
+      "image": [
+        "  ,--./,-.",
+        " / #      \\",
+        "|          |",
+        " \\        /",
+        "  `._,._,'"
+      ],
+      "type": "food",
+      "properties": {
+        "healthRestoration": 5
       }
+    },
+    "Wood": {
+      "description": "Wood for crafting and building. Essential for any blacksmith or builder.",
+      "type": "resource",
+      "stackable": true,
+      "properties": {
+        "weight": 1
+      }
+    },
+    "Iron Ore": {
+      "description": "Raw iron ready to be smelted into something useful.",
+      "type": "resource",
+      "stackable": true,
+      "properties": {
+        "weight": 2
+      }
+    },
+    "Enchanted Sword": {
+      "description": "A sword imbued with mystical powers.",
+      "stackable": false,
+      "type": "item",
+      "properties": {
+        "damage": 10,
+        "weight": 5
+      },
+      "enchantments": {
+        "fire": 5
+      }
+    }
   }
+  
   

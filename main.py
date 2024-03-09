@@ -11,8 +11,12 @@ from utils.command_processor import process_command
 from utils.state_manager import StateManager
 from utils.game_systems import TimeSystem
 
+global_items = None
+
 def setup_game():
+    global global_items
     items = load_items()
+    global_items = items  # Set the global variable
     rooms = load_rooms(items=items)
     time_system = TimeSystem()
     starting_room = rooms["Living Room"]  # Assuming you start in the Living Room

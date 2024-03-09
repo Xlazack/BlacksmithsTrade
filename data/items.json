@@ -1,52 +1,31 @@
 {
-    "Book": {
-      "stackable": false,
-      "description": "An old, dusty book about Python.",
-      "type": "book"
-    },
-    "Apple": {
-      "stackable": true,
-      "description": "An apple, freshly picked from a tree. Restores a small amount of life.",
-      "image": [
-        "  ,--./,-.",
-        " / #      \\",
-        "|          |",
-        " \\        /",
-        "  `._,._,'"
-      ],
-      "type": "food",
-      "properties": {
-        "healthRestoration": 5
-      }
-    },
-    "Wood": {
-      "description": "Wood for crafting and building. Essential for any blacksmith or builder.",
-      "type": "resource",
-      "stackable": true,
-      "properties": {
-        "weight": 1
-      }
-    },
-    "Iron Ore": {
-      "description": "Raw iron ready to be smelted into something useful.",
-      "type": "resource",
-      "stackable": true,
-      "properties": {
-        "weight": 2
-      }
-    },
-    "Enchanted Sword": {
-      "description": "A sword imbued with mystical powers.",
-      "stackable": false,
-      "type": "item",
-      "properties": {
-        "damage": 10,
-        "weight": 5
-      },
-      "enchantments": {
-        "fire": 5
-      }
-    }
+  "Wood": {
+    "type": "resource",
+    "description": "Common wood, useful for crafting and building.",
+    "stackable": true
+  },
+  "Coal": {
+    "type": "resource",
+    "description": "Common fuel. Used to fuel the forge and create steel.",
+    "stackable": true
+  },
+  "Dragon Scales High Quality": {
+    "type": "resource",
+    "description": "High-quality dragon scales, rare and durable for crafting.",
+    "stackable": true
+  },
+  "4140 Steel Hammer": {
+    "type": "tool",
+    "description": "A high-quality hammer made from 4140 steel, increases crafting efficiency.",
+    "stackable": false
+  },
+  "Emerald": {
+    "type": "monetary",
+    "description": "A precious green gemstone.",
+    "stackable": true,
+    "price": 50
   }
+}
+
   
   

@@ -2,15 +2,17 @@
 import uuid
 
 class Item:
-    def __init__(self, name, description="", properties=None, enchantments=None, stackable=False, item_type =None):
-        self.id = uuid.uuid4() if not stackable else name  # Use name as ID for stackable items
+    def __init__(self, name, item_type, description, stackable, properties=None, enchantments=None):
+        self.id = uuid.uuid4()  # Unique identifier for unique items
         self.name = name
+        self.type = item_type
         self.description = description
+        self.stackable = stackable
         self.properties = properties if properties else {}
         self.enchantments = enchantments if enchantments else {}
-        self.stackable = stackable
-        self.item_type = item_type
 
-    def __str__(self):
-        enchanted_properties = ', '.join([f"{k}: {v}" for k, v in self.enchantments.items()])
-        return f"{self.name} (Type: {self.item_type}, {'Enchanted with ' + enchanted_properties if enchanted_properties else 'No enchantments'})"
+class UniqueItem(Item):  # Extended class for unique items
+    def __init__(self, name, item_type, description, properties, enchantments):
+        super().__init__(name, item_type, description, stackable=False)
+        self.properties = properties  # Additional properties dict for unique items
+        self.enchantments = enchantments

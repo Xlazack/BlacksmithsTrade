@@ -10,8 +10,8 @@ def process_command(command, current_state, player, time_system):
             destination = command[2] if len(command) >= 3 and command[1] == "to" else command[1]
             destination = destination.lower()
 
-            if destination in player.current_location.connected_rooms:
-                new_room_key = player.current_location.connected_rooms[destination]
+            if destination in player.current_location.exits:
+                new_room_key = player.current_location.exits[destination]
                 player.move_to(new_room_key)
             else:
                 print("You can't go that way.")

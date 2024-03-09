@@ -1,40 +1,56 @@
 {
     "Bedroom":{
       "description": "A room with your own bed",
-      "east": "Kitchen",
-      "items": []
+      "exits": {
+        "east": "Kitchen"
+      },
+      "items": {}
     },
     "Kitchen": {
       "description": "A kitchen with a smell of fresh bread.",
-      "south": "Living Room",
-      "west": "Bedroom",
-      "items": ["Apple"]
+      "exits": {
+        "south": "Living Room",
+        "west": "Bedroom"
+      },      
+      "items": {
+        "Wood": {"quantity": 3}
+      }
     },
     "Living Room": {
       "description": "A cozy living room with a fireplace.",
-      "north": "Kitchen",
-      "west": "Forge",
-      "south": "Outside",
-      "items": ["Book"]
+      "exits": {
+        "north": "Kitchen",
+        "west": "Forge",
+        "south": "Outside"
+      },       
+      "items": {
+        "4140 Steel Hammer": {"quantity": 1}
+      }
     },
     "Forge": {
       "description": "Forge at your disposal, brimming with energy to create masterpieces",
-      "east": "Living Room",
-      "south": "Outside",
-      "items": []
+      "exits": {
+        "east": "Living Room",
+        "south": "Outside"
+      },      
+      "items": {}
     },
     "Outside": {
       "description": "The area outside your home, the gateway to the wilderness.",
-      "forest": "Forest",
-      "home": "Living Room",
-      "forge": "Forge",
-      "north": "Forge",
-      "items": []
+      "exits": {
+        "forest": "Forest",
+        "home": "Living Room",
+        "forge": "Forge",
+        "north": "Forge"
+      },      
+      "items": {}
     },
     "Forest": {
       "description": "The local forest, filled with various trees and the sounds of wildlife.",
-      "east": "Outside",
-      "items": [] 
+      "exits": {
+        "east": "Outside"
+      },
+      "items": {}
     }
   }
   
